@@ -20,7 +20,7 @@ export default function HeadBar() {
             />
           </div>
           <div className="flex flex-col justify-center ">
-            <div className="text-xs font-normal no-underline">email@email.com</div>
+            <div className="text-xs font-normal no-underline" style={{textDecoration: 'none'}}>email@email.com</div>
             <div className="bg-color-bg-green20 text-color-main w-fit px-2 py-[1px] rounded text-xs mt-1 font-semibold">
               Pro Plan
             </div>

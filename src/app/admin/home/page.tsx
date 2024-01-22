@@ -224,7 +224,12 @@ export default function Home() {
                 <span>인증</span>
               </div>
               <div className="flex mt-1 text-xs">
-                <div className="text-gray-500 no-underline">473-02-08982</div>
+                <div
+                  className="text-gray-500 no-underline"
+                  style={{ textDecoration: "none" }}
+                >
+                  473-02-08982
+                </div>
                 <div className="text-color-border">&nbsp;|&nbsp;</div>
                 <div className="text-color-main">대표계정</div>
               </div>

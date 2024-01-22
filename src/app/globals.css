@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .header-text {
+    @apply text-xl font-bold;
+  }
+
+  .transition-200 {
+    @apply transition-all duration-200;
+  }
+
+  /* 로그인 */
+  .login-button {
+    @apply mt-3 flex justify-center items-center h-14 rounded-lg  font-semibold;
+  }
+
+  /* 사이드바 */
+  .sidebar-button {
+    @apply flex cursor-pointer items-center px-4 py-2.5 text-sm font-medium text-gray-400 transition-200 rounded-lg hover:bg-color-bg-green10 hover:text-color-main;
+  }
+
+  .sidebar-active {
+    @apply bg-color-bg-green10 text-color-main;
+  }
+
+  .sidebar-icon-gray {
+    @apply absolute opacity-0 group-hover:opacity-100 transition-200;
+  }
+
+  .sidebar-icon-color {
+    @apply absolute opacity-100 transition-200;
+  }
+
+  /* 홈 탭 */
+  .sub-header {
+    @apply text-gray-600 font-semibold;
+  }
+
+  .admin-card {
+    @apply flex flex-col p-5 bg-color-white rounded-xl justify-center text-sm font-medium;
+  }
+
+  .icon-eight {
+    @apply flex justify-center items-center rounded-full w-8 h-8;
+  }
+
+  .qna-icon {
+    @apply absolute right-6 bottom-6 transition-200 w-[52px] h-[52px] group-hover:w-[60px] group-hover:h-[60px];
+  }
+
+  /* 수집상품 탭 */
+  .px4-button {
+    @apply flex justify-center items-center px-4 w-auto h-full rounded-md text-sm font-medium
+  }
+
+  .px6-button {
+    @apply flex justify-center items-center h-[38px] px-6 text-[13px] font-medium
+  }
+
+  .button-color-main {
+    @apply text-color-white bg-color-main hover:bg-color-main-hover transition-200
+  }
+
+  .selector {
+    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-gray-500 bg-color-white border border-color-border hover:border-gray-600 hover:text-gray-600 transition-all duration-200
+  }
+
+  .selector-selected {
+    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-color-white bg-gray-900 border border-gray-900
+  }
+
+  .item-select {
+    @apply absolute z-10 top-2.5 left-2.5 w-[30px] h-[30px] rounded-full flex justify-center items-center
+  }
+
+  .page-button {
+    @apply w-10 h-10 rounded-lg flex justify-center items-center me-0.5
+  }
+}
+
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+
+:root {
+}
+
+@media (prefers-color-scheme: dark) {
+}
+
+body {
+}
+
+@layer utilities {
+}

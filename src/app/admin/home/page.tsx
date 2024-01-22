@@ -23,10 +23,6 @@ import USDFlag from "../../../../public/images/flag-USD.svg";
 import GBPFlag from "../../../../public/images/flag-GBP.svg";
 import EURFlag from "../../../../public/images/flag-EUR.svg";
 
-interface CheckedStoresProps {
-  [key: string]: boolean;
-}
-
 interface NoticeProps {
   index: number;
   date: string;
@@ -34,18 +30,6 @@ interface NoticeProps {
 }
 
 export default function Home() {
-  // 초기 전체 선택
-  const storesInit: CheckedStoresProps = {
-    스마트스토어: true,
-    쿠팡: true,
-    G마켓: true,
-    옥션: true,
-    "11번가 글로벌": true,
-    "11번가 국내": true,
-    롯데온: true,
-    인터파크: true,
-  };
-
   const storesList: string[] = [
     "스마트스토어",
     "쿠팡",
@@ -56,6 +40,8 @@ export default function Home() {
     "롯데온",
     "인터파크",
   ];
+  const [checkedStores, setCheckedStores] = useState(new Set(storesList));
+  const [allChecked, setAllChecked] = useState(true);
 
   const noticeList: NoticeProps[] = [
     {
@@ -85,23 +71,27 @@ export default function Home() {
     },
   ];
 
-  // 스토어 선택 관리
-  const [checkedStores, setCheckedStores] =
-    useState<CheckedStoresProps>(storesInit);
-
-  const handleCheckboxChange = (store: string) => {
-    setCheckedStores((prev) => ({ ...prev, [store]: !prev[store] }));
+  const toggleStoreCheck = (store: string) => {
+    setCheckedStores((prev) => {
+      const newChecked = new Set(prev);
+      if (newChecked.has(store)) {
+        newChecked.delete(store);
+      } else {
+        newChecked.add(store);
+      }
+      return newChecked;
+    });
+    console.log(checkedStores);
   };
 
-  const handleAllChecked = () => {
-    const allChecked = Object.values(checkedStores).every((value) => value);
-
-    setCheckedStores(
-      storesList.reduce((acc, store) => {
-        acc[store] = !allChecked;
-        return acc;
-      }, {} as CheckedStoresProps)
-    );
+  const toggleAllCheck = () => {
+    if (allChecked) {
+      setCheckedStores(new Set());
+      setAllChecked(false);
+    } else {
+      setCheckedStores(new Set(storesList));
+      setAllChecked(true);
+    }
   };
 
   return (
@@ -117,39 +107,35 @@ export default function Home() {
               className="appearance-none"
               type="checkbox"
               id="all"
-              onClick={() => handleAllChecked()}
-              checked={Object.values(checkedStores).every((value) => value)}
+              checked={allChecked}
+              onChange={toggleAllCheck}
             />
             <label className="flex items-center" htmlFor="all">
-              {Object.values(checkedStores).every((value) => value) ? (
-                <CheckSel />
-              ) : (
-                <CheckUnsel />
-              )}
+              {allChecked ? <CheckSel /> : <CheckUnsel />}
               <span className="ps-[6px]">전체</span>
             </label>
           </div>
-          {storesList.map((store, key) => (
-            <>
-              <div className="me-4 flex select-none" key={key}>
+          {storesList.map((store) => (
+            <React.Fragment key={store}>
+              <div key={store} className="me-4 flex select-none">
                 <input
                   className="appearance-none"
                   type="checkbox"
                   id={store}
-                  checked={checkedStores[store] || false}
-                  onChange={() => handleCheckboxChange(store)}
+                  checked={checkedStores.has(store)}
+                  onChange={() => toggleStoreCheck(store)}
                 />
                 <label className="flex items-center" htmlFor={store}>
-                  {checkedStores[store] ? <CheckSel /> : <CheckUnsel />}
+                  {checkedStores.has(store) ? <CheckSel /> : <CheckUnsel />}
                   <span className="ps-[6px]">{store}</span>
                 </label>
               </div>
-            </>
+            </React.Fragment>
           ))}
         </div>
       </div>
 
-      {/* 요약 */} 
+      {/* 요약 */}
       <div className="w-full mt-2 p-6 rounded-xl items-center bg-gray-200 grid grid-cols-4 gap-4">
         <div className="admin-card">
           <div className="flex items-center">
@@ -224,7 +210,7 @@ export default function Home() {
                 Pro Plan
               </div>
               <div className="mt-1 text-xs text-color-main">
-                26일 남음 {"(2024.02.13까지"}
+                26일 남음 2024.02.13까지
               </div>
               <a className="flex items-center mt-5 text-sm text-gray-900 font-medium hover:underline">
                 <span className="me-1">요금제 결제하러 가기</span>
@@ -238,7 +224,7 @@ export default function Home() {
                 <span>인증</span>
               </div>
               <div className="flex mt-1 text-xs">
-                <div className="text-gray-500">473-02-08982</div>
+                <div className="text-gray-500 no-underline">473-02-08982</div>
                 <div className="text-color-border">&nbsp;|&nbsp;</div>
                 <div className="text-color-main">대표계정</div>
               </div>
@@ -351,7 +337,7 @@ export default function Home() {
           </div>
           <div className="mt-4 border-t border-color-border">
             {noticeList.map((notice) => (
-              <>
+              <React.Fragment key={notice.index}>
                 <a
                   href={`/admin/notice/${notice.index}`}
                   className="flex items-center justify-between px-2 py-3 border-b border-color-border hover:bg-gray-200"
@@ -361,7 +347,7 @@ export default function Home() {
                   </span>
                   <span className="text-gray-500 text-xs">{notice.date}</span>
                 </a>
-              </>
+              </React.Fragment>
             ))}
           </div>
         </div>

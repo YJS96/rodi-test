@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
 import SearchIcon from "../../../../public/images/icon-24-search_type2.svg";
@@ -28,6 +28,10 @@ export default function Collection() {
   const [selectedItems, setSelectedItems] = useState<Number[]>([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [pageRange, setPageRange] = useState({ start: 1, end: 5 });
+
+  useEffect(() => {
+    setSelectedItems([]);
+  }, [currentPage]);
 
   // 임시 리스트
   const categoryList = ["모두보기", "내가 수집한 상품", "직원1", "직원2"];
@@ -793,7 +797,6 @@ export default function Collection() {
       setSelectedItems(newSelectedItems);
     }
   };
-  
 
   // 페이지네이션
   const itemsPerPage = 15;
@@ -825,17 +828,18 @@ export default function Collection() {
   const renderPageNumbers = pageNumbers
     .filter((number) => number >= pageRange.start && number <= pageRange.end)
     .map((number) => (
-      <button
-        key={number}
-        onClick={() => setCurrentPage(number)}
-        className={`page-button text-sm font-normal transition-200 ${
-          number === currentPage
-            ? "bg-color-bg-green10 text-color-main"
-            : "text-gray-500"
-        }`}
-      >
-        {number}
-      </button>
+      <React.Fragment key={number}>
+        <button
+          onClick={() => setCurrentPage(number)}
+          className={`page-button text-sm font-normal transition-200 ${
+            number === currentPage
+              ? "bg-color-bg-green10 text-color-main"
+              : "text-gray-500"
+          }`}
+        >
+          {number}
+        </button>
+      </React.Fragment>
     ));
 
   return (
@@ -876,7 +880,7 @@ export default function Collection() {
       <div className="mt-7">
         <div className="flex items-center h-[30px]">
           {categoryList.map((category, index) => (
-            <>
+            <React.Fragment key={index}>
               <button
                 className={
                   categoryIndex === index ? "selector-selected" : "selector"
@@ -887,7 +891,7 @@ export default function Collection() {
               >
                 {category}
               </button>
-            </>
+            </React.Fragment>
           ))}
         </div>
         <div className="mt-4 w-full h-14 flex items-center justify-between rounded-lg bg-gray-300 py-[9px] pe-[10px] ps-5 select-none">
@@ -897,11 +901,7 @@ export default function Collection() {
               handleSelectAll();
             }}
           >
-            {selectedItems.length === 15 ? (
-              <CheckSel />
-            ) : (
-              <CheckUnsel />
-            )}
+            {selectedItems.length === 15 ? <CheckSel /> : <CheckUnsel />}
             <span className="text-sm font-medium text-gray-600 ms-[6px]">
               {selectedItems.length}개 선택
             </span>
@@ -921,12 +921,13 @@ export default function Collection() {
 
       <div className="w-full mt-7 grid grid-cols-5 grid-rows-3 gap-x-4 gap-y-8">
         {currentItems.map((item, key) => (
-          <>
+          <React.Fragment key={key}>
             <div
               className="flex flex-col select-none cursor-pointer group relative"
               onClick={() => {
                 handleItemCheck(key);
               }}
+              key={key}
             >
               <div className="relative">
                 <div
@@ -959,7 +960,7 @@ export default function Collection() {
                 </div>
               </div>
             </div>
-          </>
+          </React.Fragment>
         ))}
       </div>
       <div className="pt-10 flex justify-center items-center">

@@ -52,7 +52,7 @@ const config: Config = {
         login: "2px 2px 36px rgba(109, 233, 166, 0.16)",
       },
       fontFamily: {
-        'Pretendard': ['Pretendard']
+        'pretendard': ['Pretendard']
       }
     },
   },

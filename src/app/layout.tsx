@@ -15,8 +15,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html className="font-Pretendard" lang="en">
-      <body className="font-Pretendard text-gray-900 font-light text-md">{children}</body>
+    <html lang="ko">
+      <body className="font-pretendard text-gray-900 font-light text-md">{children}</body>
     </html>
   );
 }

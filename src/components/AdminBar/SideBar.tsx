@@ -25,7 +25,7 @@ interface SidebarProps {
 export default function SideBar({ currentTab }: SidebarProps) {
   return (
     <>
-      <div className="fixed left-0 top-[60px] h-full w-[200px] z-50 border-e bg-color-white border-color-border">
+      <div className="fixed font-Pretendard left-0 top-[60px] h-full w-[200px] z-50 border-e bg-color-white border-color-border">
         <div className="py-[10px] px-2 overflow-y-auto">
           <ul className="space-y-[5px]">
             {/* 홈 */}

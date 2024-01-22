@@ -15,7 +15,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html className="font-Pretendard" lang="en">
       <body className="font-Pretendard text-gray-900 font-light text-md">{children}</body>
     </html>
   );

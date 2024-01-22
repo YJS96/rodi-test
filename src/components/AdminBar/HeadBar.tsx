@@ -6,7 +6,7 @@ import DownArrow from "../../../public/images/down-fill.svg";
 export default function HeadBar() {
   return (
     <>
-      <div className="fixed font-Pretendard w-full h-[60px] top-0 left-0 border-b z-50 border-color-border bg-color-white flex justify-between items-center px-2">
+      <div className="fixed w-full h-[60px] top-0 left-0 border-b z-50 border-color-border bg-color-white flex justify-between items-center px-2">
         <a className="p-4 hover:bg-gray-200 rounded-3xl">
           <Image src="/images/logo.svg" width="102" height="20" alt="logo" />
         </a>

@@ -52,11 +52,11 @@
 
   /* 수집상품 탭 */
   .px4-button {
-    @apply flex justify-center items-center px-4 w-auto h-full rounded-md text-sm font-medium;
+    @apply flex justify-center items-center px-4 w-auto h-full rounded-md text-sm font-medium select-none;
   }
 
   .px6-button {
-    @apply flex justify-center items-center h-[38px] px-6 text-[13px] font-medium;
+    @apply flex justify-center items-center rounded h-[38px] px-6 text-[13px] font-medium select-none;
   }
 
   .button-color-main {
@@ -64,11 +64,11 @@
   }
 
   .selector {
-    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-gray-500 bg-color-white border border-color-border hover:border-gray-600 hover:text-gray-600 transition-all duration-200;
+    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-gray-500 bg-color-white border border-color-border hover:border-gray-600 hover:text-gray-600 transition-all duration-200 select-none;
   }
 
   .selector-selected {
-    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-color-white bg-gray-900 border border-gray-900;
+    @apply flex items-center justify-center px-2.5 me-2 w-auto h-full rounded-full text-xs text-color-white bg-gray-900 border border-gray-900 select-none;
   }
 
   .item-select {
@@ -77,6 +77,32 @@
 
   .page-button {
     @apply w-10 h-10 rounded-lg flex justify-center items-center me-0.5;
+  }
+
+  /* 등록상품 탭 */
+  .calendar-date {
+    @apply mb-1.5 w-[17px] h-[17px] text-[10px] flex justify-center items-center rounded-full;
+  }
+
+  /* 주문관리 탭 */
+  .round-small-button {
+    @apply h-7 py-2 px-3 rounded-full flex items-center text-xs font-medium bg-gray-300;
+  }
+
+  .home-tab {
+    @apply me-6 py-3 px-1 font-medium text-gray-400 shadow-tab flex items-center;
+  }
+
+  .home-tab-selected {
+    @apply me-6 py-3 px-1 font-medium flex shadow-tab-selected items-center;
+  }
+
+  .gray-rounded {
+    @apply w-full rounded-xl bg-gray-200 flex items-center;
+  }
+
+  .orderlist-th {
+    @apply mx-[5px] font-medium
   }
 }
 

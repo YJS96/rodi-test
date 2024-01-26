@@ -34,13 +34,16 @@ const config: Config = {
       "color-guide": "#EAF8F2",
       "color-qna": "#EDF2FE",
       "color-help-center": "#FDF8E8",
-      "color-help-hover" : "#DEB00B",
+      "color-help-hover": "#DEB00B",
       "naver-button": "#03c75a",
       "naver-button-hover": "#03bd56",
       "kakao-button": "#fee500",
       "kakao-button-hover": "#fadd00",
       "google-button-hover": "#f2f5fa",
-      "collection-ing": "#FEA218",
+      "color-pending": "#FEA218",
+      "chip-red-1": "#CF4275",
+      "chip-red-2": "#DA7499",
+      "chip-red-3": "#EEADC4",
     },
     extend: {
       backgroundImage: {
@@ -50,10 +53,15 @@ const config: Config = {
       },
       dropShadow: {
         login: "2px 2px 36px rgba(109, 233, 166, 0.16)",
+        popup: "0px 0px 12px rgba(0, 0, 0, 0.16)",
+      },
+      boxShadow: {
+        "tab": "inset 0 -1px 0 #E5E8EB",
+        "tab-selected": "inset 0 -2px 0 #191F28"
       },
       fontFamily: {
-        'pretendard': ['Pretendard']
-      }
+        pretendard: ["Pretendard"],
+      },
     },
   },
   plugins: [],

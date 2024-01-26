@@ -19,7 +19,7 @@ export default function CollectionStatus({ status }: StatusProps) {
         </div>
       )}
       {status === "pending" && (
-        <div className="absolute bottom-2.5 left-2.5 flex items-center py-1 px-2 rounded text-[11px] font-medium bg-collection-ing text-color-white">
+        <div className="absolute bottom-2.5 left-2.5 flex items-center py-1 px-2 rounded text-[11px] font-medium bg-color-pending text-color-white">
           <Pending />
           <span className="ms-1">편집 대기 중</span>
         </div>

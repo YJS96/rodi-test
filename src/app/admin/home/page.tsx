@@ -147,7 +147,7 @@ export default function Home() {
           <div className="text-right text-2xl font-bold mt-2">1,924,300원</div>
           <div className="flex w-full justify-end items-center mt-[5px]">
             <TrendingDown />
-            <div className="ms-1 text-xs font-medium text-color-red">
+            <div className="ms-1 text-xs font-medium text-color-blue">
               12월대비 20%
             </div>
           </div>
@@ -162,7 +162,7 @@ export default function Home() {
           <div className="text-right text-2xl font-bold mt-3">300건</div>
           <div className="flex w-full justify-end items-center mt-[5px]">
             <TrendingUp />
-            <div className="ms-1 text-xs font-medium text-color-blue">
+            <div className="ms-1 text-xs font-medium text-color-red">
               12월대비 20%
             </div>
           </div>
@@ -177,7 +177,7 @@ export default function Home() {
           <div className="text-right text-2xl font-bold mt-3">854개</div>
           <div className="flex w-full justify-end items-center mt-[5px]">
             <TrendingDown />
-            <div className="ms-1 text-xs font-medium text-color-red">
+            <div className="ms-1 text-xs font-medium text-color-blue">
               12월대비 20%
             </div>
           </div>
@@ -192,7 +192,7 @@ export default function Home() {
           <div className="text-right text-2xl font-bold mt-3">300개</div>
           <div className="flex w-full justify-end items-center mt-[5px]">
             <TrendingDown />
-            <div className="ms-1 text-xs font-medium text-color-red">
+            <div className="ms-1 text-xs font-medium text-color-blue">
               12월대비 20%
             </div>
           </div>
@@ -224,12 +224,7 @@ export default function Home() {
                 <span>인증</span>
               </div>
               <div className="flex mt-1 text-xs">
-                <div
-                  className="text-gray-500 no-underline"
-                  style={{ textDecoration: "none" }}
-                >
-                  473-02-08982
-                </div>
+                <div className="text-gray-500 no-underline">473-02-08982</div>
                 <div className="text-color-border">&nbsp;|&nbsp;</div>
                 <div className="text-color-main">대표계정</div>
               </div>
@@ -259,7 +254,7 @@ export default function Home() {
               <div className="text-gray-900 font-bold text-right">123원</div>
               <div className="flex justify-end items-center mt-[3px]">
                 <TrendingDown />
-                <div className="text-color-red text-xs font-medium ms-1">
+                <div className="text-color-blue text-xs font-medium ms-1">
                   32원
                 </div>
               </div>
@@ -278,7 +273,7 @@ export default function Home() {
               <div className="text-gray-900 font-bold text-right">1,320원</div>
               <div className="flex justify-end items-center mt-[3px]">
                 <TrendingDown />
-                <div className="text-color-red text-xs font-medium ms-1">
+                <div className="text-color-blue text-xs font-medium ms-1">
                   32원
                 </div>
               </div>
@@ -299,7 +294,7 @@ export default function Home() {
               <div className="text-gray-900 font-bold text-right">1,673원</div>
               <div className="flex justify-end items-center mt-[3px]">
                 <TrendingUp />
-                <div className="text-color-blue text-xs font-medium ms-1">
+                <div className="text-color-red text-xs font-medium ms-1">
                   32원
                 </div>
               </div>
@@ -318,7 +313,7 @@ export default function Home() {
               <div className="text-gray-900 font-bold text-right">1,500원</div>
               <div className="flex justify-end items-center mt-[3px]">
                 <TrendingDown />
-                <div className="text-color-red text-xs font-medium ms-1">
+                <div className="text-color-blue text-xs font-medium ms-1">
                   32원
                 </div>
               </div>

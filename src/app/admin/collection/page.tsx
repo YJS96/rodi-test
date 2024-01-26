@@ -13,6 +13,7 @@ import CheckGoods from "../../../../public/images/icon-20-checkUnsel.svg";
 import PrevPage from "../../../../public/images/icon-16-right.svg";
 
 import CollectionStatus from "@/components/Buttons/CollectionStatus";
+import TempList from "./TempList.json"
 
 interface ItemProps {
   index: Number;
@@ -41,774 +42,25 @@ export default function Collection() {
   };
 
   // 임시 리스트
-  const itemList: ItemProps[] = [
-    {
-      index: 1,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 2,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 3,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 4,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 5,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 6,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 7,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 8,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 9,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 10,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 11,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 12,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 13,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 14,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 15,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 16,
-      date: "2024.01.01~02",
-      name: "2페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 17,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 18,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 19,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 20,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 21,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 22,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 23,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 24,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 25,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 26,
-      date: "2024.01.01~02",
-      name: "2페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 27,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 28,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 29,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 30,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 31,
-      date: "2024.01.01~02",
-      name: "3페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 32,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 33,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 34,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 35,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 36,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 37,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 38,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 39,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 40,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 41,
-      date: "2024.01.01~02",
-      name: "3페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 42,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 43,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 44,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 45,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 46,
-      date: "2024.01.01~02",
-      name: "4페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 47,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 48,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 49,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 50,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 51,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 52,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 53,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 54,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 55,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 56,
-      date: "2024.01.01~02",
-      name: "4페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 57,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 58,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 59,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 60,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 61,
-      date: "2024.01.01~02",
-      name: "5페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 62,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 63,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 64,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 65,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 66,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 67,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 68,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 69,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 70,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 71,
-      date: "2024.01.01~02",
-      name: "5페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 72,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 73,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 74,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 75,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 76,
-      date: "2024.01.01~02",
-      name: "6페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 77,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "error",
-    },
-    {
-      index: 78,
-      date: "2024.01.02~03",
-      name: "이름1",
-      category: "카테고리1",
-      img: "/images/eximg_01.png",
-      status: "ready",
-    },
-    {
-      index: 79,
-      date: "2024.01.03~04",
-      name: "이름2",
-      category: "카테고리2",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 80,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 81,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 82,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 83,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 84,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 85,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 86,
-      date: "2024.01.01~02",
-      name: "6페이지",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 87,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 88,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 89,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-    {
-      index: 90,
-      date: "2024.01.01~02",
-      name: "탱크 튜브 물총 어린이 성인 장난감 성인 소년 부동 패들 서핑 마운트-A",
-      category: "스포츠/레저 > 수영 > 수영용품 > 튜브",
-      img: "/images/eximg_01.png",
-      status: "pending",
-    },
-  ];
-
-  // 아이템 선택
-  const handleItemCheck = (key: Number) => {
-    if (selectedItems.includes(key)) {
-      setSelectedItems(selectedItems.filter((item) => item !== key));
-    } else {
-      setSelectedItems([...selectedItems, key]);
-    }
-  };
-
-  // 아이템 전체 선택
-  const handleSelectAll = () => {
-    const currentPageIndexes = currentItems.map(
-      (item) => (item.index as number) - 1
-    );
-
-    if (currentPageIndexes.every((index) => selectedItems.includes(index))) {
-      // 모든 현재 페이지 아이템이 이미 선택된 경우, 해당 아이템들을 선택 해제
-      setSelectedItems(
-        selectedItems.filter(
-          (index) => !currentPageIndexes.includes(index as number)
-        )
-      );
-    } else {
-      // 현재 페이지의 아이템 중 선택되지 않은 아이템들만 찾아 추가
-      const newSelectedItems = [...selectedItems];
-      currentPageIndexes.forEach((index) => {
-        if (!selectedItems.includes(index)) {
-          newSelectedItems.push(index);
-        }
-      });
-      setSelectedItems(newSelectedItems);
-    }
-  };
+  const itemList: ItemProps[] = TempList
 
   // 페이지네이션
   const itemsPerPage = 15;
   const indexOfLastItem = currentPage * itemsPerPage;
   const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = itemList.slice(indexOfFirstItem, indexOfLastItem);
 
+  // 현재 페이지에 보여지는 상품
+  const currentItems = itemList
+    .slice(indexOfFirstItem, indexOfLastItem)
+    .map((item, index) => {
+      return { ...item, globalIndex: indexOfFirstItem + index + 1 };
+    });
   const pageNumbers = [];
   for (let i = 1; i <= Math.ceil(itemList.length / itemsPerPage); i++) {
     pageNumbers.push(i);
   }
 
+  // 이전 페이지
   const handlePrevPage = () => {
     if (pageRange.start > 1) {
       const newPage = pageRange.start - 1;
@@ -817,6 +69,7 @@ export default function Collection() {
     }
   };
 
+  // 다음 페이지
   const handleNextPage = () => {
     if (pageRange.end < Math.ceil(itemList.length / itemsPerPage)) {
       const newPage = pageRange.end + 1;
@@ -842,12 +95,33 @@ export default function Collection() {
       </React.Fragment>
     ));
 
+  // 아이템 개별 선택
+  const handleItemCheck = (globalIndex: Number) => {
+    if (selectedItems.includes(globalIndex)) {
+      setSelectedItems(
+        selectedItems.filter((itemIndex) => itemIndex !== globalIndex)
+      );
+    } else {
+      setSelectedItems([...selectedItems, globalIndex]);
+    }
+  };
+
+  // 아이템 전체 선택
+  const handleSelectAll = () => {
+    if (selectedItems.length === currentItems.length) {
+      setSelectedItems([]);
+    } else {
+      const allItems = currentItems.map((item) => item.index);
+      setSelectedItems(allItems);
+    }
+  };
+
   return (
     <>
       <div className="mb-5">
         <span className="header-text">수집상품</span>
         <span className="text-sm font-medium text-color-main ms-3">
-          총 24건
+          총 {TempList.length}건
         </span>
       </div>
       <div className="flex h-[48px]">
@@ -907,11 +181,11 @@ export default function Collection() {
             </span>
           </div>
           <div className="flex">
-            <div className="px6-button bg-color-white text-gray-700 rounded hover:bg-gray-100 transition-200">
+            <div className="px6-button bg-color-white text-gray-700 hover:bg-gray-100 transition-200">
               <Delete />
               <span className="ms-1">삭제</span>
             </div>
-            <div className="px6-button ms-[10px] bg-gray-900 text-color-white rounded hover:bg-color-black transition-200">
+            <div className="px6-button ms-[10px] bg-gray-900 text-color-white hover:bg-color-black transition-200">
               <Upload />
               <span className="ms-1">업로드</span>
             </div>
@@ -925,14 +199,16 @@ export default function Collection() {
             <div
               className="flex flex-col select-none cursor-pointer group relative"
               onClick={() => {
-                handleItemCheck(key);
+                handleItemCheck(item.globalIndex);
               }}
               key={key}
             >
               <div className="relative">
                 <div
                   className={`item-select bg-color-black ${
-                    selectedItems.includes(key) ? "" : "opacity-50"
+                    selectedItems.includes(item.globalIndex)
+                      ? "opacity-100"
+                      : "opacity-50"
                   }`}
                 >
                   <CheckGoods />
